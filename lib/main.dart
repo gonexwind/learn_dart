@@ -1,13 +1,10 @@
-import 'dart:io';
+Future<void> main() async {
+  print('Fetching username...');
+  var username = await fetchUsername();
+  print('You are logged in as $username');
+  print('Welcome!');
+}
 
-void main() {
-  for (int i = 11; i < 20; i++) {
-    if (i % 11 == 0) {
-      continue;
-    }
-    stdout.write('$i ');
-    if (i % 5 == 0) {
-      break;
-    }
-  }
+Future<String> fetchUsername() {
+  return Future.delayed(Duration(seconds: 3), () => 'DartUser');
 }
